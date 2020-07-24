@@ -15,3 +15,6 @@ Route::get('think', function () {
 });
 
 Route::get('hello/:name', 'index/hello');
+
+
+//Route::rule('admin/:controller/:action', 'admin.:controller/:action');

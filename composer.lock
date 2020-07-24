@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fb2f7df03494505045691f3a62c917d7",
+    "content-hash": "fd8c716ecd8c7c8fe5abfef1920996c5",
     "packages": [
         {
             "name": "league/flysystem",
@@ -649,6 +649,56 @@
             ],
             "description": "The ThinkPHP5 Image Package",
             "time": "2016-09-29T06:05:43+00:00"
+        },
+        {
+            "name": "topthink/think-multi-app",
+            "version": "v1.0.14",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/top-think/think-multi-app.git",
+                "reference": "ccaad7c2d33f42cb1cc2a78d6610aaec02cea4c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/top-think/think-multi-app/zipball/ccaad7c2d33f42cb1cc2a78d6610aaec02cea4c3",
+                "reference": "ccaad7c2d33f42cb1cc2a78d6610aaec02cea4c3",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "php": ">=7.1.0",
+                "topthink/framework": "^6.0.0"
+            },
+            "type": "library",
+            "extra": {
+                "think": {
+                    "services": [
+                        "think\\app\\Service"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "think\\app\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "liu21st",
+                    "email": "liu21st@gmail.com"
+                }
+            ],
+            "description": "thinkphp6 multi app support",
+            "time": "2020-07-12T13:50:37+00:00"
         },
         {
             "name": "topthink/think-orm",
