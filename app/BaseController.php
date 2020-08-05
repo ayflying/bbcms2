@@ -94,6 +94,27 @@ abstract class BaseController
         return $v->failException(true)->check($data);
     }
 
+    public function success($msg, $url = null, $time = 3)
+    {
+        $data= [
+            'msg'=> $msg,
+            'url' => $url ?? request()->header('referer'),
+            'time'=>$time,
+        ];
+        return View::fetch('/jump/success',$data);
+
+    }
+
+    public function error($msg, $url, $time)
+    {
+        $data= [
+            'msg'=> $msg,
+            'url' => $url ?? request()->header('referer'),
+            'time'=>$time,
+        ];
+        return View::fetch('/jump/error',$data);
+    }
+
     protected function assign($name, $value = null)
     {
         return View::assign($name, $value);

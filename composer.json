@@ -1,18 +1,17 @@
 {
-    "name": "topthink/think",
-    "description": "the new thinkphp framework",
+    "name": "ayflying/bbcms2",
+    "description": "bbcms2 framework",
     "type": "project",
     "keywords": [
-        "framework",
-        "thinkphp",
-        "ORM"
+        "bbcms",
+        "cms"
     ],
-    "homepage": "http://thinkphp.cn/",
+    "homepage": "http://blog.7cuu.com/",
     "license": "Apache-2.0",
     "authors": [
         {
-            "name": "liu21st",
-            "email": "liu21st@gmail.com"
+            "name": "ayflying",
+            "email": "ay@7cuu.com"
         }
     ],
     "require": {
