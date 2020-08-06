@@ -10,10 +10,17 @@ use think\Request;
 class Portal
 {
 
-    public function menu()
+    public function menu(Request $request)
     {
-
-        return View::fetch('/portal/menu');
+        if ($request->isPost()) {
+            $name = $request->post('name');
+            $pid = $request->post('pid') ?? 0;
+            $db = PortalMenu::add($name, $pid);
+            return $db;
+        } else {
+            $list = PortalMenu::select();
+            return View::fetch('/portal/menu',['list'=>$list]);
+        }
     }
 
     public function menu_add(Request $request)
