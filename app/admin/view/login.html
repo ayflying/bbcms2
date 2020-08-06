@@ -19,7 +19,6 @@
     <![endif]-->
 </head>
 <body class="login-bg">
-
 <div class="login layui-anim layui-anim-up">
     <div class="message">管理登录</div>
     <div id="darkbannerwrap"></div>
@@ -52,15 +51,17 @@
                     return res.json();
                 }).then((res)=>{
                     console.log(res);
+                    if(status > 0){
+                        layer.msg(JSON.stringify(data.field), function () {
+                            //location.href='index.html'
+                        });
+                        return;
+                    }
+                    layer.msg(res.msg);
+
+
                 });
 
-
-
-                /*
-                layer.msg(JSON.stringify(data.field), function () {
-                    //location.href='index.html'
-                });
-                */
                 return false;
             });
         });

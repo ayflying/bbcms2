@@ -8,7 +8,7 @@ use think\App;
 use think\facade\Cache;
 use think\facade\Cookie;
 
-class Common extends BaseController
+class Base extends BaseController
 {
 
     public function __construct(App $app)
@@ -18,7 +18,7 @@ class Common extends BaseController
 
         $uid = $this->getUid();
         if(empty($uid)){
-            $this->error();
+            //$this->error("请登录","admin/login");
 
         }
 

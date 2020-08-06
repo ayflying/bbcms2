@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>正在跳转</title>
+</head>
+<body>
+<div class="layui-container">
+    <div class="fly-panel">
+        <div class="fly-none" style="text-align: center; margin: 10px" >
+            <h2><i class="layui-icon layui-icon-ok"></i></h2>
+            <p style="font-size: 5em; margin: 20px; padding: 50px; background-color: #dbd7d7">{$msg}</p>
+            <p style="color: #000000"><a id="page_url" href="{$url}" data-time="{$time}"></a></p>
+        </div>
+    </div>
+</div>
+<script>
+    let num = "{$time}"; //倒计时的秒数
+    let url = "{$url}";
+    setTime();
+
+    let timeId = window.setInterval(function () {
+        num--;
+        setTime();
+        if (num < 2 && url.length > 0) {
+            window.location = url;
+            url = "";
+        }
+        if (num <= 0) {
+            window.clearInterval(timeId);
+        }
+    }, 1000);
+
+    function setTime() {
+        document.getElementById('page_url').innerHTML = '将在' + num + '秒后自动跳转';
+    }
+</script>
+</body>
+</html>
+{:exit;}

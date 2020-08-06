@@ -94,25 +94,43 @@ abstract class BaseController
         return $v->failException(true)->check($data);
     }
 
-    public function success($msg, $url = null, $time = 3)
+    /**
+     * 跳转页面
+     * @param string $msg
+     * @param string|null $url
+     * @param int $time
+     * @return string
+     * @author An Yang
+     * @time 2020/8/6 9:44
+     */
+    public function success(string $msg, string $url = "", int $time = 3): string
     {
-        $data= [
-            'msg'=> $msg,
+        $data = [
+            'msg' => $msg,
             'url' => $url ?? request()->header('referer'),
-            'time'=>$time,
+            'time' => $time,
         ];
-        return View::fetch('/jump/success',$data);
+        return View::fetch('/jump/success', $data);
 
     }
 
-    public function error($msg, $url, $time)
+    /**
+     * 错误跳转页面
+     * @param string $msg
+     * @param string $url
+     * @param int $time
+     * @return string
+     * @author An Yang
+     * @time 2020/8/6 9:44
+     */
+    public function error(string $msg, string $url = "", int $time = 3): string
     {
-        $data= [
-            'msg'=> $msg,
+        $data = [
+            'msg' => $msg,
             'url' => $url ?? request()->header('referer'),
-            'time'=>$time,
+            'time' => $time,
         ];
-        return View::fetch('/jump/error',$data);
+        return View::fetch('/jump/error', $data);
     }
 
     protected function assign($name, $value = null)
