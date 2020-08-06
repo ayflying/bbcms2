@@ -67,7 +67,7 @@
                     </dl>
                 </li>
                 <li class="layui-nav-item to-index">
-                    <a href="/">前台首页</a></li>
+                    <a href="/" target="_blank">前台首页</a></li>
             </ul>
         </div>
         <!-- 顶部结束 -->
@@ -79,7 +79,7 @@
                     {foreach $menu as $item}
                     <li>
                         <a href="javascript:;">
-                            <i class="iconfont left-nav-li" lay-tips="会员管理">{$item.icon|raw}</i>
+                            <i class="iconfont left-nav-li" lay-tips="{$item.name}">{$item.icon|raw}</i>
                             <cite>{$item.name}</cite>
                             <i class="iconfont nav_right">&#xe697;</i></a>
                         <ul class="sub-menu">

@@ -11,25 +11,30 @@ return [
         'name' => "会员管理",
         'icon' => '&#xe6b8;',
         'data' => [
-            [
+            'list' => [
                 'name' => '会员列表',
                 'url' => url("/admin/member/index")
             ],
         ]
     ],
-    'order'=>[
+    'order' => [
         'name' => '订单管理',
-        'icon' => '&#xe723;',
-        'data' =>[]
-    ],
-    'cate'=>[
-        'name' => '分类管理',
         'icon' => '&#xe723;',
         'data' => []
     ],
+    'portal' => [
+        'name' => '门户管理',
+        'icon' => '&#xe723;',
+        'data' => [
+            'menu' => [
+                'name' => '菜单管理',
+                'url' => url("/admin/portal/menu")
+            ]
+        ]
+    ],
     'setting' => [
         'name' => '系统管理',
-        'icon' =>'&#xe6ce;',
+        'icon' => '&#xe6ce;',
         'data' => [
 
         ]

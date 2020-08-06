@@ -19,6 +19,12 @@ class MemberUser extends Model
             ['password', "like", md5($password)],
         ];
         $db = self::where($where)->field('uid,username,guid,gid,email,phone,status')->cache(true, 7200)->find();
+        if (empty(!$db)) {
+            $db->update_ip = request()->ip();
+            $db->save();
+        }
+
+
         return $db;
     }
 
@@ -32,9 +38,17 @@ class MemberUser extends Model
      */
     public static function signUp(string $email, string $password)
     {
+
+        $db = self::where("email", 'like', $email)->find();
+        if (!empty($db)) {
+            return $db;
+        }
         $data = [
             'email' => $email,
-            'password' => $password,
+            'password' => md5($password),
+            'create_ip' => request()->ip(),
+            'update_ip' => request()->ip(),
+            'status' => 1,
         ];
         $db = self::create($data);
         return $db;
