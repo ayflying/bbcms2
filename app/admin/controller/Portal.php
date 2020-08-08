@@ -3,7 +3,7 @@ declare (strict_types=1);
 
 namespace app\admin\controller;
 
-use app\model\PortalMenu;
+use app\common\model\PortalMenu;
 use think\facade\View;
 use think\Request;
 

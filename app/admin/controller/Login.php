@@ -3,7 +3,7 @@ declare (strict_types=1);
 
 namespace app\admin\controller;
 
-use app\model\MemberUser;
+use app\common\model\MemberUser;
 use think\facade\Cookie;
 use think\facade\View;
 use think\Request;

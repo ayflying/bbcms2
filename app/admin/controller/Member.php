@@ -3,7 +3,7 @@ declare (strict_types=1);
 
 namespace app\admin\controller;
 
-use app\model\MemberUser;
+use app\common\model\MemberUser;
 use app\Request;
 use think\facade\View;
 
