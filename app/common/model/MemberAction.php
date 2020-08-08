@@ -10,5 +10,5 @@ use think\Model;
  */
 class MemberAction extends Model
 {
-    //
+    protected $pk = 'aid';
 }

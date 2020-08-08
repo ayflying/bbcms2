@@ -11,6 +11,7 @@ use think\Model;
 class PortalMenu extends Model
 {
 
+    protected $pk = 'tid';
 
     public static function add(string $name,int $pid=0)
     {

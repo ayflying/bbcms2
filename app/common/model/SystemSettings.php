@@ -8,7 +8,7 @@ use think\Model;
 /**
  * @mixin \think\Model
  */
-class MemberGroup extends Model
+class SystemSettings extends Model
 {
-    protected $pk = 'gid';
+    protected $pk = 'name';
 }

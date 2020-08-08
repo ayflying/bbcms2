@@ -10,5 +10,5 @@ use think\Model;
  */
 class MemberUserProfileSetting extends Model
 {
-    //
+    protected $pk = 'uid';
 }
