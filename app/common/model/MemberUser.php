@@ -12,6 +12,13 @@ class MemberUser extends Model
 {
     protected $pk = 'uid';
 
+
+    public function profile()
+    {
+        return $this->hasOne(MemberUserProfile::class,'uid');
+    }
+
+
     public static function login($username, $password)
     {
         $where = [
@@ -53,6 +60,7 @@ class MemberUser extends Model
         $db = self::create($data);
         return $db;
     }
+
 
 
 }
