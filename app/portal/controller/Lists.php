@@ -4,11 +4,15 @@ declare (strict_types = 1);
 namespace app\portal\controller;
 
 use app\BaseController;
+use think\Request;
 
-class Index extends BaseController
+class Lists extends BaseController
 {
+
     public function index()
     {
-        return '您好！这是一个[portal]示例应用';
+        echo 123123;
     }
+
+
 }
