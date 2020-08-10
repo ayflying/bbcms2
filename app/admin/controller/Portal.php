@@ -18,7 +18,7 @@ class Portal
             $db = PortalMenu::add($name, $pid);
             return $db;
         } else {
-            $list = PortalMenu::select();
+            $list = PortalMenu::order("pid")->select();
             return View::fetch('/portal/menu',['list'=>$list]);
         }
     }
