@@ -1,7 +1,7 @@
 <?php
 declare (strict_types=1);
 
-namespace app\model;
+namespace app\common\model;
 
 use think\Model;
 
@@ -11,6 +11,7 @@ use think\Model;
 class PortalMenu extends Model
 {
 
+    protected $pk = 'tid';
 
     public static function add(string $name,int $pid=0)
     {

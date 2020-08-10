@@ -18,3 +18,15 @@ Route::get('hello/:name', 'index/hello');
 
 
 //Route::rule('admin/:controller/:action', 'admin.:controller/:action');
+
+/*
+Route::rule('tid/:tid',"/portal/Lists");
+Route::get('aid/:aid',"portal/Article");
+*/
+
+Route::rule('tid/[:tid]','\app\portal\controller\Lists@index','GET');
+Route::rule('aid/[:aid]','\app\portal\controller\Article@index','GET');
+Route::rule('add/:tid','\app\portal\controller\Post@add','GET|POST');
+Route::rule('edit/:aid','\app\portal\controller\Post@edit','GET|POST');
+
+Route::rule('uid/:uid','\app\member\controller\index@index','GET');

@@ -148,14 +148,15 @@ abstract class BaseController
      */
     protected function fetch(string $template = '', array $vars = [])
     {
-        $path = "/view/tgxing";
+        $path = "view/bilibili";
         $file = $path . $template;
 
 
         $config = [
             'view_dir_name' => $path,
             'tpl_replace_string' => [
-                '__TPL__' => "/static" . $path,
+                '__TPL__' => "/static/" . $path,
+                '__TP__' => "/static/" . $path,
             ],
         ];
         Config::set($config, "view");

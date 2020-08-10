@@ -1,7 +1,7 @@
 <?php
 declare (strict_types=1);
 
-namespace app\model;
+namespace app\common\model;
 
 use think\Model;
 
@@ -11,6 +11,13 @@ use think\Model;
 class MemberUser extends Model
 {
     protected $pk = 'uid';
+
+
+    public function profile()
+    {
+        return $this->hasOne(MemberUserProfile::class,'uid');
+    }
+
 
     public static function login($username, $password)
     {
@@ -53,6 +60,7 @@ class MemberUser extends Model
         $db = self::create($data);
         return $db;
     }
+
 
 
 }
